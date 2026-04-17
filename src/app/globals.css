@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0d0d12;
+  --foreground: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-red: #ff3b30;
+  --accent-orange: #ff9500;
+  --accent-purple: #af52de;
+  --accent-blue: #007aff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Components */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar Specific */
+.sidebar-active-indicator {
+  width: 3px;
+  height: 20px;
+  background: var(--accent-red);
+  position: absolute;
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px var(--accent-red);
+}
+
+/* Gradients from image */
+.gradient-purple {
+  background: linear-gradient(135deg, #af52de 0%, #5856d6 100%);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #5ac8fa 0%, #007aff 100%);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, #ff2d55 0%, #ff3b30 100%);
+}
+
+/* Buttons */
+.btn-vibrant {
+  @apply px-6 py-2 rounded-full font-bold transition-all active:scale-95;
+}
+
+.btn-vibrant-primary {
+  background: var(--accent-red);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+}
+
+.btn-vibrant-primary:hover {
+  box-shadow: 0 6px 20px rgba(255, 59, 48, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
